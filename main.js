@@ -1,6 +1,8 @@
 const loggedOut = document.querySelectorAll('.logged-out');
 const loggedIn = document.querySelectorAll('.logged-in');
 
+
+
 const loginCheck = user => {
     if (user){
         loggedIn.forEach(link => link.style.display = 'block');
@@ -55,6 +57,7 @@ loginForm.addEventListener('submit', (e) => {
         //close the modal
         $("#signinModal").modal("hide");            
         console.log("Login");
+       
     })
 
 });
@@ -81,7 +84,6 @@ googleButton.addEventListener("click", (e) => {
 
   const provider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(provider).then((result) => {
-    console.log(result);
     console.log("google sign in");
   })
   .catch(err => {
@@ -98,7 +100,6 @@ facebookButton.addEventListener("click", (e) => {
 
   const provider = new firebase.auth.FacebookAuthProvider();
   auth.signInWithPopup(provider).then((result) => {
-    console.log(result);
     console.log("facebook sign in");
   })
   .catch(err => {
